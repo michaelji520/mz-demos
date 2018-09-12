@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Courier';
+  src: url('./courier_10_pitch.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+.hello {
+  color: red;
+  font-family: 'Courier';
+  background: url('./icon.jpg');
+}
