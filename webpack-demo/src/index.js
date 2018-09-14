@@ -9,6 +9,7 @@ function component() {
 
   btn.innerHTML = 'Click me and check the console!';
   btn.onclick = printMe;
+  console.log(printMe);
 
   element.appendChild(btn);
 
@@ -16,3 +17,4 @@ function component() {
 }
 
 document.body.appendChild(component());
+
