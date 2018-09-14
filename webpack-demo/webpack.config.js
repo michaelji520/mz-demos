@@ -7,10 +7,15 @@ module.exports = {
   entry: {
     app: './src/index.js',
   },
-  devtool: 'inline-source-map',
+  // devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
     hot: true
+  },
+  module: {
+    rules: [
+      {test: /\.css$/, use: ['style-loader', 'css-loader']}
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
@@ -20,7 +25,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   output: {
-    filename: '[name][hash:8].bundle.js',
+    filename: '[name]-[hash:8].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
