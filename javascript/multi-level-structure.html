@@ -54,6 +54,7 @@
       .rest {
         display: inline-block;
         flex: 1;
+        position: relative;
       }
       .sub-wrapper {
         display: flex;
@@ -84,13 +85,17 @@
             <div class="label-item">二级标题</div>
           </div>
           <div class="rest">
-            <div class="sub-wrapper">
+            <div class="sub-wrapper left-line">
               <div class="level-width has-child">
                 <div class="label-item">三级标题三级标题</div>
               </div>
               <div class="rest">
-                <div><div class="label-item">四级标题</div></div>
-                <div><div class="label-item">四级标题</div></div>
+                <div class="sub-wrapper left-line">
+                  <div class="label-item">四级标题</div>
+                </div>
+                <div class="sub-wrapper">
+                  <div class="label-item">四级标题</div>
+                </div>
               </div>
             </div>
             <div class="sub-wrapper">
@@ -98,8 +103,12 @@
                 <div class="label-item">三级标题</div>
               </div>
               <div class="rest">
-                <div><div class="label-item">四级标题</div></div>
-                <div><div class="label-item">四级标题</div></div>
+                <div class="sub-wrapper left-line">
+                  <div class="label-item">四级标题</div>
+                </div>
+                <div class="sub-wrapper">
+                  <div class="label-item">四级标题</div>
+                </div>
               </div>
             </div>
           </div>
@@ -109,11 +118,15 @@
             <div class="label-item">二级标题</div>
           </div>
           <div class="rest">
-            <div class="level-width">
-              <div class="label-item">三级标题</div>
+            <div class="sub-wrapper left-line">
+              <div class="level-width">
+                <div class="label-item">三级标题</div>
+              </div>
             </div>
-            <div class="level-width">
-              <div class="label-item">三级标题</div>
+            <div class="sub-wrapper">
+              <div class="level-width">
+                <div class="label-item">三级标题</div>
+              </div>
             </div>
           </div>
         </div>
