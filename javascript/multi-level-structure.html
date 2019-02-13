@@ -1,0 +1,133 @@
+<!--
+  Copyright (c) 2014-2018 Zuoyebang, All rights reserved.
+  @fileoverview 测试多级结构html
+  @author zhangji02 | zhangji02@zuoyebang.com
+  @version 1.0 | 2019-02-12
+ -->
+
+<html>
+  <head>
+    <title>Test</title>
+    <script src="./vue.js"></script>
+    <style>
+      .label-item {
+        display: inline-block;
+        cursor: pointer;
+        background: #42C57A;
+        border-radius: 2px;
+        color: #FFF;
+        padding: 4px 8px;
+        margin: 10px 20px;
+        position: relative;
+        z-index: 1;
+      }
+      .label-item:before {
+        content: "";
+        position: absolute;
+        height: 0px;
+        width: 18px;
+        border: 1px solid #666;
+        left: -20px;
+        top: 40%;
+      }
+      .has-child {
+        position: relative;
+        z-index: 0;
+      }
+      .has-child:after {
+        content: "";
+        position: absolute;
+        height: 0px;
+        width: 100%;
+        border: 1px solid #666;
+        right: -20px;
+        z-index: 0;
+        top: 44%;
+      }
+      .wrapper {
+        display: flex;
+        width: 100%;
+        height: 500px;
+        background: #DDD;
+        align-items: flex-start;
+      }
+      .rest {
+        display: inline-block;
+        flex: 1;
+      }
+      .sub-wrapper {
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+      }
+      .left-line:before {
+        content: "";
+        border: 1px solid #666;
+        position: absolute;
+        bottom: -24px;
+        height: 100%;
+      }
+      .level-width {
+        width: 240px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper" id="app">
+      <div class="level-width has-child">
+        <div class="label-item">一级标题</div>
+      </div>
+      <div class="rest">
+        <div class="sub-wrapper left-line">
+          <div class="level-width has-child">
+            <div class="label-item">二级标题</div>
+          </div>
+          <div class="rest">
+            <div class="sub-wrapper">
+              <div class="level-width has-child">
+                <div class="label-item">三级标题三级标题</div>
+              </div>
+              <div class="rest">
+                <div><div class="label-item">四级标题</div></div>
+                <div><div class="label-item">四级标题</div></div>
+              </div>
+            </div>
+            <div class="sub-wrapper">
+              <div class="level-width has-child">
+                <div class="label-item">三级标题</div>
+              </div>
+              <div class="rest">
+                <div><div class="label-item">四级标题</div></div>
+                <div><div class="label-item">四级标题</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sub-wrapper">
+          <div class="level-width has-child">
+            <div class="label-item">二级标题</div>
+          </div>
+          <div class="rest">
+            <div class="level-width">
+              <div class="label-item">三级标题</div>
+            </div>
+            <div class="level-width">
+              <div class="label-item">三级标题</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data() {
+          return {};
+        },
+        mounted() {
+        }
+      });
+    </script>
+  </body>
+</html>

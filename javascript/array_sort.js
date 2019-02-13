@@ -1,10 +1,11 @@
 /**
  * Copyright (c) 2014-2018 Zuoyebang, All rights reserved.
- * @fileoverview
+ * @fileoverview 测试JS的sort算法
  * @author zhangji02 | zhangji02@zuoyebang.com
  * @version 1.0 | 2018-09-12
  */
 
+// 结论: 当sort的元素数量低于10个, 使用的是插入排序, 高于10个, 使用的是快速排序
 var arr = [
   {id: 1, type: 1, test: 1},
   {id: 1, type: 1, test: 2},
