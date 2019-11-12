@@ -5,4 +5,7 @@
  * @version 1.0 | 2019-11-11 | initial version
  */
 
-
+var execCmd = function (cmd, args = null) {
+  console.log(cmd);
+  document.execCommand(cmd, false, args);
+}
