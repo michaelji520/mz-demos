@@ -1,0 +1,27 @@
+<html>
+  <head></head>
+  <body>
+    <div id="app"></div>
+    <script>
+      var num = 100000;
+      var cursor = 0;
+      var fragment = '';
+      var step = 250;
+      function foo() {
+        fragment = '';
+        for (let i = cursor; i < cursor + step; i++) {
+          fragment += `<div>${i}</div>`;
+        }
+        document.querySelector('#app').insertAdjacentHTML('beforeend', fragment);
+        cursor += step;
+        loop();
+      }
+      function loop() {
+        if (cursor < 100000) {
+          window.requestAnimationFrame(foo);
+        }
+      }
+      loop();
+    </script>
+  </body>
+</html>
