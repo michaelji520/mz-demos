@@ -1,12 +1,6 @@
-<!--
-* Copyright (c) 2014-2018 NighthawkStudio, All rights reserved.
-* @fileoverview
-* @author Michael Zhang | michaelji520@gmail.com
-* @version 1.0 | 2019-11-11
---!>
-
 <html>
   <head>
+    <link charset="utf-8" />
     <link rel="stylesheet" href="./app.css" />
     <title>Rich Text Editor</title>
   </head>
@@ -14,11 +8,38 @@
   <body>
     <div class="mz-editor">
       <div class="editor-head">
-        <button onclick="execCmd('bold')">加粗</button>
-        <button onclick="execCmd('redo')">前进</button>
-        <button onclick="execCmd('undo')">后退</button>
+        <button onclick="execCmd('redo')">redo</button>
+        <button onclick="execCmd('undo')">undo</button>
+        <button onclick="execCmd('bold')">bold</button>
+        <button onclick="execCmd('italic')">italic</button>
+        <button onclick="execCmd('underline')">underline</button>
+        <button onclick="execCmd('strikeThrough')">strikeThrough</button>
+        <span>
+          <button onclick="execCmd('foreColor', '#00ff00')">font color</button>
+          <div class="dropdown-panel">
+            <ul class="predefined-color">
+              <li></li>
+            </ul>
+            <input class="color-val"/>
+            <button onclick="execCmd('foreColor', '#00ff00')">custom</button>
+          </div>
+        </span>
+        <span>
+          <input class="color-val"/>
+          <button onclick="execCmd('backColor', '#00ff00')">bgcolor</button>
+        </span>
+        <span>
+          <input class="link-val"/>
+          <button onclick="execCmd('createLink', 'http://www.baidu.com')">link</button>
+          <button onclick="execCmd('unlink')">del link</button>
+        </span>
+        <span>
+          <input class="table-val"/>
+          <button onclick="execCmd('insertHTML', '<table><tr><td></td><td></td></tr><tr><td></td><td></td></tr></table>')">insert table</button>
+        </span>
       </div>
       <div class="editor-body" contenteditable="true">
+      draw a dragon with me on the left
       </div>
     </div>
     <script src="./app.js"></script>
