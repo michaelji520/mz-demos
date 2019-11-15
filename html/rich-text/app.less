@@ -1,0 +1,46 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+.mz-editor {
+  .editor-head {
+    display: flex;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .operation-wrapper {
+    position: relative;
+  }
+  .dropdown-panel {
+    display: none;
+    position: absolute;
+    left: 0;
+  }
+  .show {
+    display: inline-flex;
+  }
+  .custom-input {
+    display: flex;
+  }
+  .editor-body {
+    border: 1px solid #000;
+    min-height: 300px;
+    &::focus {
+      outline: 0;
+      border: 1px solid #0066CC;
+    }
+    table {
+      border: 1px solid #000;
+      border-collapse: collapse;
+      td {
+        border: 1px solid #000;
+        min-width: 80px;
+      }
+    }
+  }
+}
+
+

@@ -1,7 +1,21 @@
 <html>
   <head>
     <link charset="utf-8" />
-    <link rel="stylesheet" href="./app.css" />
+    <link rel="stylesheet/less" type="text/css" href="./app.less" />
+    <!-- set options before less.js script -->
+    <script>
+      less = {
+        env: "development",
+        async: false,
+        fileAsync: false,
+        poll: 1000,
+        functions: {},
+        dumpLineNumbers: "comments",
+        relativeUrls: false,
+        rootpath: ""
+      };
+    </script>
+    <script src="./less.min.js" type="text/javascript"></script>
     <title>Rich Text Editor</title>
   </head>
 
@@ -14,16 +28,23 @@
         <button onclick="execCmd('italic')">italic</button>
         <button onclick="execCmd('underline')">underline</button>
         <button onclick="execCmd('strikeThrough')">strikeThrough</button>
-        <span>
-          <button onclick="execCmd('foreColor', '#00ff00')">font color</button>
+        <div class="operation-wrapper">
+          <button onclick="toggleDropdownPanel(this)">font color</button>
           <div class="dropdown-panel">
             <ul class="predefined-color">
-              <li></li>
+              <li>1</li>
+              <li>1</li>
+              <li>1</li>
+              <li>1</li>
+              <li>1</li>
+              <li>1</li>
             </ul>
-            <input class="color-val"/>
-            <button onclick="execCmd('foreColor', '#00ff00')">custom</button>
+            <div class="custom-input">
+              <input class="color-val"/>
+              <button onclick="execCmd('foreColor', '#00ff00')">custom</button>
+            </div>
           </div>
-        </span>
+        </div>
         <span>
           <input class="color-val"/>
           <button onclick="execCmd('backColor', '#00ff00')">bgcolor</button>

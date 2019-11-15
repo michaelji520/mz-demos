@@ -9,3 +9,8 @@ var execCmd = function (cmd, args = null) {
   console.log(cmd);
   document.execCommand(cmd, false, args);
 }
+
+var toggleDropdownPanel = function (e) {
+  console.log(e);
+  e.parentElement.querySelector('.dropdown-panel').classList.toggle('show');
+}
