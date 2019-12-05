@@ -1,0 +1,31 @@
+<!--
+* Copyright (c) 2014-2018 NighthawkStudio, All rights reserved.
+* @fileoverview To test and verify window load event occur time
+* @author Michael Zhang | michaelji520@gmail.com
+* @version 1.0 | 2019-12-05
+--!>
+
+<html>
+  <head></head>
+  <body>
+    <img width="200" onload="imgLoad()" src="https://i.loli.net/2019/07/08/5d2300c45b90050129.jpg"/>
+    <input id="text" />
+    <button onclick="addImg()">添加图片</button>
+    <script>
+      window.addEventListener('load', (e) => {
+        console.log('window load');
+      });
+      function imgLoad() {
+        console.log('img load');
+      }
+      function addImg() {
+        let dom = document.createElement('img');
+        dom.onload = () => {
+          console.log('dynamic add img load!');
+        };
+        dom.src = document.querySelector('#text').value;
+        document.body.appendChild(dom);
+      }
+    </script>
+  </body>
+</html>
