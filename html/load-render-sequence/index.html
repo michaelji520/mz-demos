@@ -23,8 +23,16 @@
         dom.onload = () => {
           console.log('dynamic add img load!');
         };
+        // onload event it only supports with few tags like listed below.
+        // <body>, <frame>, <iframe>, <img>, <input type="image">, <link>, <script>, <style>
+
+        let wrapper = document.createElement('div');
+        wrapper.onload = () => {
+          console.log('img wrapper load'); // won't happen
+        }
         dom.src = document.querySelector('#text').value;
-        document.body.appendChild(dom);
+        wrapper.appendChild(dom);
+        document.body.appendChild(wrapper);
       }
     </script>
   </body>
